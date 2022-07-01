@@ -29,7 +29,7 @@ const AddTask = () => {
     <div>
        
     </div>
-    <Tasks array={array}/>
+    <Tasks taskListItems={array}/>
     </div>
    
   )

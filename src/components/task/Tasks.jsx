@@ -1,15 +1,19 @@
 import React from 'react'
-import AddTask from '../addtask/AddTask'
+
  
- const Tasks = ({array}) => {   
+ const Tasks = ({taskListItems}) => {
+  const {task,date} =taskListItems   
   return (
      <div>
   <ul>{
-            array.map((item)=>{
+            taskListItems.map((item)=>{
             return <li>{item}</li>
                 })
           }
-        </ul></div>)}
+        </ul>
+        </div>
+        )
+        }
 
  
  export default Tasks
