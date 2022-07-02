@@ -1,8 +1,8 @@
 import React from 'react'
-
+import AddTask from '../addtask/AddTask'
  
  const Tasks = ({taskListItems}) => {
-  const {task,date} =taskListItems   
+//   const {task,date} =taskListItems   
   return (
      <div>
   <ul>{
