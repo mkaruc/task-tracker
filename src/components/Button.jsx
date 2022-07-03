@@ -1,5 +1,5 @@
 import { useState } from "react"
-import AddTask from "../addtask/AddTask"
+import AddTask from "./AddTask"
 
 const Button = () => {
     const[visMenu, setvisMenu]=useState(true)

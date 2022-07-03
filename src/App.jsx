@@ -1,5 +1,5 @@
-import Header from './components/header/Header';
-import Tasks from './components/task/Tasks';
+import Header from './components/Header';
+import Tasks from './components/Tasks';
 
 const App = () => {
   return (

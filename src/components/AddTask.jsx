@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import Tasks from '../task/Tasks'
+import Tasks from './Tasks'
 const AddTask = () => {
     const[taskItem, setTaskItem]=useState({ task : "", date : "" })
     const [array,setArray] = useState([taskItem])

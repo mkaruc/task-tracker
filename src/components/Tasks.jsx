@@ -1,5 +1,5 @@
 import React from 'react'
-import AddTask from '../addtask/AddTask'
+import AddTask from './AddTask'
  
  const Tasks = ({taskListItems}) => {
 //   const {task,date} =taskListItems   
