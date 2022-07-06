@@ -1,11 +1,10 @@
-import Header from './components/Header';
-import Tasks from './components/Tasks';
+import Home from './pages/Home';
+import './App.module.css'
 
 const App = () => {
   return (
-    <div>
-      <Header />
-      <Tasks />
+    <div className="container">
+    <Home />
     </div>
   )
 }

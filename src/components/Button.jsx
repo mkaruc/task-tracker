@@ -1,13 +1,27 @@
 import { useState } from "react"
 import AddTask from "./AddTask"
+import btnstyle from './Button.module.css';
 
 const Button = () => {
     const[visMenu, setvisMenu]=useState(true)
+    const[btnStyle,setbtnStyle]= useState({name: 'Show Add Task Bar', bgcolor:'purple'})
+    const handleShow=()=>{
+      if (visMenu) {
+            setbtnStyle({
+              name: 'Close Add Task Bar', bgcolor:'red'
+            });
+          }else{
+            setbtnStyle({
+              name: 'Show Add Task Bar', bgcolor:'purple'
+            });
+           }
+        setvisMenu(!visMenu);
+        }
   return (
     <div>
-        <button onClick={()=> setvisMenu(!visMenu)}>{visMenu ? 'Show Add Task Bar' : 'Close Add Task Bar'}</button>
+        <button onClick={handleShow} className={btnstyle['barButton']} style={{background:btnStyle.bgcolor}}>{btnStyle.name}</button>
         <div>
-            {!visMenu ? <AddTask /> : null} 
+            {!visMenu && <AddTask />} 
         </div>
     </div>
   )
