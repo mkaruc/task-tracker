@@ -17,19 +17,19 @@ const AddTask = () => {
     <div>
     <form onSubmit={submitTask}>
         <div>
-        <label htmlFor=""></label>
-        <input type="text" value={taskItem.task} name="Task" id='task' onChange={handleTask} />
+        <label htmlFor="task">Task</label>
+        <input type="text" value={taskItem.task} name="Task" id='task' placeholder='Add Task' onChange={handleTask} />
         </div>
         <div>
-        <label htmlFor=""></label>
-        <input type="text"  value={taskItem.date} name="Date" id='date' onChange={handleTask} />
+        <label htmlFor="date">Date</label>
+        <input type="datetime-local"  value={taskItem.date} name="Date" id='date' onChange={handleTask} />
         </div>
         <button type="submit">Save Task</button>
     </form>
     <div>
        
     </div>
-    <Tasks taskListItems={array}/>
+    <Tasks taskListItems1={array}/>
     </div>
    
   )
