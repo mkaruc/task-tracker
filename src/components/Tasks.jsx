@@ -1,26 +1,15 @@
-import React from 'react'
-// import AddTask from './AddTask'
- 
- const Tasks = ({tasks}) => {
-  return(
-    <div className="taskListArea">
-      {
-        tasks.map((item)=>{
-          const {id,task,date,isDone} =item
-          return(
-            <div className="taskList" key={id}>
-              <ul>
-                <li>{task}</li>
-                <li>{date}</li>
-                <li>{isDone}</li>
-              </ul>
-            </div>
-          )
-        })
-      }
+import Task from "./Task"
+
+const Tasks = ({tasks, deleteTask, isDoneApp }) => {
+  return (
+    <div>
+ {
+   tasks.map(task => (
+     <Task duty = {task} key={task.id} deleteTask = {deleteTask} isDoneApp = {isDoneApp}/>
+   ))
+ }
     </div>
   )
-        }
+}
 
- 
- export default Tasks
+export default Tasks
