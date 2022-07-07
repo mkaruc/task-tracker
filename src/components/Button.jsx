@@ -2,7 +2,7 @@ import { useState } from "react"
 import AddTask from "./AddTask"
 import btnstyle from './Button.module.css';
 
-const Button = () => {
+const Button = ({tasks,settasks}) => {
     const[visMenu, setvisMenu]=useState(true)
     const[btnStyle,setbtnStyle]= useState({name: 'Show Add Task Bar', bgcolor:'purple'})
     const handleShow=()=>{
@@ -21,7 +21,7 @@ const Button = () => {
     <div>
         <button onClick={handleShow} className={btnstyle['barButton']} style={{background:btnStyle.bgcolor}}>{btnStyle.name}</button>
         <div>
-            {!visMenu && <AddTask />} 
+            {!visMenu && <AddTask tasks={tasks}  settasks={settasks}/>} 
         </div>
     </div>
   )

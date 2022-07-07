@@ -1,35 +1,34 @@
 import React, { useState } from 'react'
 import Tasks from './Tasks'
-const AddTask = () => {
-    const[taskItem, setTaskItem]=useState({ task : "", date : "" })
-    const [array,setArray] = useState([taskItem])
-    function handleTask(e){
-        setTaskItem({...taskItem, [e.target.id]:e.target.value })
-    } 
+const AddTask = ({tasks , settasks}) => {
+    const[task, setTask]=useState("")
+    const[date, setDate]=useState("")
     function submitTask(e){
         e.preventDefault();
-        setTaskItem({ task : "", date : "" });
-        console.log(taskItem); 
-        setArray(array =>[...array,taskItem]);
-        console.log(array);
-        }
+        const id=new Date().getTime();
+        const newTask={ id: id,task:task, date: date, isDone:false}
+        settasks([...tasks,newTask])
+        console.log(tasks);
+        setTask("");
+        setDate("");
+        };
   return (
     <div>
     <form onSubmit={submitTask}>
         <div>
         <label htmlFor="task">Task</label>
-        <input type="text" value={taskItem.task} name="Task" id='task' placeholder='Add Task' onChange={handleTask} />
+        <input type="text" value={task} name="Task" id='task' placeholder='Add Task' onChange={(e)=>setTask(e.target.value)} required />
         </div>
         <div>
         <label htmlFor="date">Date</label>
-        <input type="datetime-local"  value={taskItem.date} name="Date" id='date' onChange={handleTask} />
+        <input type="datetime-local"  value={date} name="Date" id='date' onChange={(e)=>setDate(e.target.value)} required/>
         </div>
         <button type="submit">Save Task</button>
     </form>
     <div>
        
     </div>
-    <Tasks taskListItems1={array}/>
+    <Tasks tasks={tasks}  settasks={settasks}/>
     </div>
    
   )

@@ -1,18 +1,25 @@
 import React from 'react'
 // import AddTask from './AddTask'
  
- const Tasks = ({taskListItems}) => {
-//   const {task,date} =taskListItems   
-  return (
-     <div>
-  {/* <ul>{
-            taskListItems.map((item)=>{
-            return <li>{item}</li>
-                })
-          }
-        </ul> */}
-        </div>
-        )
+ const Tasks = ({tasks}) => {
+  return(
+    <div className="taskListArea">
+      {
+        tasks.map((item)=>{
+          const {id,task,date,isDone} =item
+          return(
+            <div className="taskList" key={id}>
+              <ul>
+                <li>{task}</li>
+                <li>{date}</li>
+                <li>{isDone}</li>
+              </ul>
+            </div>
+          )
+        })
+      }
+    </div>
+  )
         }
 
  
